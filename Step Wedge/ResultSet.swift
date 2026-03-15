@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------
-// FilmTest.swift
+// ResultSet.swift
 // Step Wedge
 //
 // Copyright © 2026 Paul C. L. Willmott. All rights reserved.
@@ -25,63 +25,39 @@
 //
 // Revision History:
 //
-//     15/03/2026  Paul Willmott - FilmTest.swift created
+//     15/03/2026  Paul Willmott - ResultSet.swift created
 // -----------------------------------------------------------------------------
 
 import Foundation
 
-public class FilmTest : NSObject {
-  
+public class ResultSet : NSObject {
+ 
   // MARK: Constructors
+  
+  public init(stepNumber:UInt) {
+  
+    self.stepNumber = stepNumber
+    
+    super.init()
+    
+  }
   
   // MARK: Private Properties
   
   // MARK: Public Properties
+
+  public var stepNumber : UInt
   
-  public var testDate = Date()
+  public var density : Double = 0.0
   
-  public var testNumber : UInt  = 1
+  public var illuminance : Double = 0.0
   
-  public var filmStock : FilmStock = .unknown
+  public var exposureTime : Double = 0.0
   
-  public var filmFormat : FilmFormat = .ff35mm
+  public var aperture : Double = 0.0
   
-  public var batchInfo = ""
+  public var shutterSpeed : Double = 0.0
   
-  public var developer : Developer = .d76
-  
-  public var developerDilution : DeveloperDilution = .ddStock
-  
-  public var developmentTime : Double = 0.0
-  
-  public var filmProcessingMethod : FilmProcessingMethod = .smallTank
-  
-  public var aggitationDescription = ""
-  
-  public var sensitometerType : SensitometerType = .unknown
-  
-  public var notes = ""
-  
-  public var enlargerAperture : Double = 0.0
-  
-  public var enlargerExposure : Double = 0.0
-  
-  public var enlargerHeight : Double = 0.0
-  
-  public var filmSpeedUsedForMetering : ISOFilmSpeed = .unknown
-  
-  public var cameraName = ""
-  
-  public var lens = ""
-  
-  public var stepIncrement : StepIncrement = .oneHalfStop
-  
-  public var resultSetType : ResultSetType = .steps
-  
-  public var results : [ResultSet] = []
-  
-  // MARK: Private Methods
-  
-  // MARK: Public Methods
+  public var isMeteredSample : Bool = false
   
 }

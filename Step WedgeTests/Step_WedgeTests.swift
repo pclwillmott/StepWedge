@@ -67,4 +67,20 @@ struct Step_WedgeTests {
     
   }
 
+  @Test func testStepIncrement() async throws {
+    
+    for increment in StepIncrement.allCases {
+      #expect(StepIncrement.titles_forTest[increment] != nil)
+    }
+    
+  }
+
+  @Test func testResultSetType() async throws {
+    
+    for type in ResultSetType.allCases {
+      #expect(ResultSetType.titles_forTest[type] != nil)
+    }
+    
+  }
+
 }

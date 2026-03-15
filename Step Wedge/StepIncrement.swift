@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------
-// FilmTest.swift
+// StepIncrement.swift
 // Step Wedge
 //
 // Copyright © 2026 Paul C. L. Willmott. All rights reserved.
@@ -25,63 +25,72 @@
 //
 // Revision History:
 //
-//     15/03/2026  Paul Willmott - FilmTest.swift created
+//     15/03/2026  Paul Willmott - StepIncrement.swift created
 // -----------------------------------------------------------------------------
 
 import Foundation
+import AppKit
 
-public class FilmTest : NSObject {
+public enum StepIncrement : UInt16, CaseIterable {
   
+  // MARK: Enumeration
+  
+  case oneStop      = 0
+  case oneThirdStop = 1
+  case oneHalfStop  = 2
+
   // MARK: Constructors
   
-  // MARK: Private Properties
-  
+  init?(title:String) {
+    for temp in StepIncrement.allCases {
+      if temp.title == title {
+        self = temp
+        return
+      }
+    }
+    return nil
+  }
+
   // MARK: Public Properties
   
-  public var testDate = Date()
+  public var title : String {
+    return StepIncrement.titles[self]!
+  }
   
-  public var testNumber : UInt  = 1
+  // MARK: Private Class Properties
   
-  public var filmStock : FilmStock = .unknown
+#if DEBUG
   
-  public var filmFormat : FilmFormat = .ff35mm
+  public static var titles_forTest : [StepIncrement:String] {
+    return titles
+  }
   
-  public var batchInfo = ""
+#endif // DEBUG
+
+  private static let titles : [StepIncrement:String] = [
+    .oneStop      : String(localized: "1 Stop"),
+    .oneHalfStop  : String(localized: "½ Stop"),
+    .oneThirdStop : String(localized: "⅓ Stop"),
+  ]
   
-  public var developer : Developer = .d76
+  // MARK: Public Class Methods
   
-  public var developerDilution : DeveloperDilution = .ddStock
+  public static func populate(comboBox:NSComboBox) {
+    comboBox.removeAllItems()
+    for item in StepIncrement.allCases {
+      comboBox.addItem(withObjectValue: item.title)
+    }
+  }
   
-  public var developmentTime : Double = 0.0
+  public static func select(comboBox:NSComboBox, item:StepIncrement) {
+    comboBox.selectItem(withObjectValue: item.title)
+  }
   
-  public var filmProcessingMethod : FilmProcessingMethod = .smallTank
-  
-  public var aggitationDescription = ""
-  
-  public var sensitometerType : SensitometerType = .unknown
-  
-  public var notes = ""
-  
-  public var enlargerAperture : Double = 0.0
-  
-  public var enlargerExposure : Double = 0.0
-  
-  public var enlargerHeight : Double = 0.0
-  
-  public var filmSpeedUsedForMetering : ISOFilmSpeed = .unknown
-  
-  public var cameraName = ""
-  
-  public var lens = ""
-  
-  public var stepIncrement : StepIncrement = .oneHalfStop
-  
-  public var resultSetType : ResultSetType = .steps
-  
-  public var results : [ResultSet] = []
-  
-  // MARK: Private Methods
-  
-  // MARK: Public Methods
-  
+  public static func selected(comboBox:NSComboBox) -> StepIncrement? {
+    guard comboBox.indexOfSelectedItem != -1 else {
+      return nil
+    }
+    return StepIncrement(title: comboBox.objectValueOfSelectedItem as! String)
+  }
+
 }
