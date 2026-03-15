@@ -136,7 +136,7 @@ public enum ISOFilmSpeed : UInt16, CaseIterable {
     guard comboBox.indexOfSelectedItem != -1 else {
       return nil
     }
-    return ISOFilmSpeed(rawValue: UInt16(exactly: comboBox.indexOfSelectedItem)!)
+    return ISOFilmSpeed(title: comboBox.objectValueOfSelectedItem as! String)
   }
 
 }

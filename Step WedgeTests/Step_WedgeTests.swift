@@ -6,14 +6,11 @@
 //
 
 import Testing
+import AppKit
 @testable import Step_Wedge
 
 struct Step_WedgeTests {
 
-  @Test func example() async throws {
-      // Write your test here and use APIs like `#expect(...)` to check expected conditions.
-  }
-  
   @Test func testISOFilmSpeed() async throws {
     
     for isoSpeed in ISOFilmSpeed.allCases {
@@ -50,6 +47,22 @@ struct Step_WedgeTests {
     
     for dilution in DeveloperDilution.allCases {
       #expect(DeveloperDilution.titles_forTest[dilution] != nil)
+    }
+    
+  }
+
+  @Test func testSensitometerType() async throws {
+    
+    for type in SensitometerType.allCases {
+      #expect(SensitometerType.titles_forTest[type] != nil)
+    }
+    
+  }
+
+  @Test func testFilmProcessingMethod() async throws {
+    
+    for method in FilmProcessingMethod.allCases {
+      #expect(FilmProcessingMethod.titles_forTest[method] != nil)
     }
     
   }

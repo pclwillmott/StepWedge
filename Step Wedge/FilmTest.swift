@@ -47,13 +47,35 @@ public class FilmTest : NSObject {
   
   public var filmStock : FilmStock = .unknown
   
-  public var filmFormat : FilmFormat = .unknown
+  public var filmFormat : FilmFormat = .ff35mm
   
   public var batchInfo = ""
   
-  public var developer : Developer = .unknown
+  public var developer : Developer = .d76
   
   public var developerDilution : DeveloperDilution = .ddStock
+  
+  public var developmentTime : Double = 0.0
+  
+  public var filmProcessingMethod : FilmProcessingMethod = .smallTank
+  
+  public var aggitationDescription = ""
+  
+  public var sensitometerType : SensitometerType = .unknown
+  
+  public var notes = ""
+  
+  public var enlargerAperture : Double = 0.0
+  
+  public var enlargerExposure : Double = 0.0
+  
+  public var enlargerHeight : Double = 0.0
+  
+  public var filmSpeedUsedForMetering : ISOFilmSpeed = .unknown
+  
+  public var cameraName = ""
+  
+  public var lens = ""
   
   // MARK: Private Methods
   

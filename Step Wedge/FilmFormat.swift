@@ -90,7 +90,7 @@ public enum FilmFormat : UInt16, CaseIterable {
     guard comboBox.indexOfSelectedItem != -1 else {
       return nil
     }
-    return FilmFormat(rawValue: UInt16(exactly: comboBox.indexOfSelectedItem)!)
+    return FilmFormat(title: comboBox.objectValueOfSelectedItem as! String)
   }
 
 }

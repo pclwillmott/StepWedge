@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------
-// DeveloperDilution.swift
+// FilmProcessingMethod.swift
 // Step Wedge
 //
 // Copyright © 2026 Paul C. L. Willmott. All rights reserved.
@@ -25,24 +25,25 @@
 //
 // Revision History:
 //
-//     15/03/2026  Paul Willmott - DeveloperDilution.swift created
+//     15/03/2026  Paul Willmott - FilmProcessingMethod.swift created
 // -----------------------------------------------------------------------------
 
 import Foundation
 import AppKit
 
-public enum DeveloperDilution : UInt16, CaseIterable {
+public enum FilmProcessingMethod : UInt16, CaseIterable {
   
   // MARK: Enumeration
   
-  case ddStock  = 1
-  case dd1to1   = 2
-  case dd1to3   = 3
+  case smallTank  = 1
+  case largeTank  = 2
+  case tray       = 3
+  case rotaryTube = 4
 
   // MARK: Constructors
   
   init?(title:String) {
-    for temp in DeveloperDilution.allCases {
+    for temp in FilmProcessingMethod.allCases {
       if temp.title == title {
         self = temp
         return
@@ -54,43 +55,44 @@ public enum DeveloperDilution : UInt16, CaseIterable {
   // MARK: Public Properties
   
   public var title : String {
-    return DeveloperDilution.titles[self]!
+    return FilmProcessingMethod.titles[self]!
   }
   
   // MARK: Private Class Properties
   
 #if DEBUG
   
-  public static var titles_forTest : [DeveloperDilution:String] {
+  public static var titles_forTest : [FilmProcessingMethod:String] {
     return titles
   }
   
 #endif // DEBUG
 
-  private static let titles : [DeveloperDilution:String] = [
-    .ddStock : String(localized: "Stock"),
-    .dd1to1  : String(localized: "1:1"),
-    .dd1to3  : String(localized: "1:3"),
+  private static let titles : [FilmProcessingMethod:String] = [
+    .smallTank  : String(localized: "Small Tank"),
+    .largeTank  : String(localized: "Large Tank"),
+    .tray       : String(localized: "Tray"),
+    .rotaryTube : String(localized: "Rotary Tube"),
   ]
   
   // MARK: Public Class Methods
   
   public static func populate(comboBox:NSComboBox) {
     comboBox.removeAllItems()
-    for item in DeveloperDilution.allCases {
+    for item in FilmProcessingMethod.allCases {
       comboBox.addItem(withObjectValue: item.title)
     }
   }
   
-  public static func select(comboBox:NSComboBox, item:DeveloperDilution) {
+  public static func select(comboBox:NSComboBox, item:FilmProcessingMethod) {
     comboBox.selectItem(withObjectValue: item.title)
   }
   
-  public static func selected(comboBox:NSComboBox) -> DeveloperDilution? {
+  public static func selected(comboBox:NSComboBox) -> FilmProcessingMethod? {
     guard comboBox.indexOfSelectedItem != -1 else {
       return nil
     }
-    return DeveloperDilution(title: comboBox.objectValueOfSelectedItem as! String)
+    return FilmProcessingMethod(title: comboBox.objectValueOfSelectedItem as! String)
   }
 
 }

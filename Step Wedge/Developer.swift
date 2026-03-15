@@ -92,7 +92,7 @@ public enum Developer : UInt16, CaseIterable {
     guard comboBox.indexOfSelectedItem != -1 else {
       return nil
     }
-    return Developer(rawValue: UInt16(exactly: comboBox.indexOfSelectedItem)!)
+    return Developer(title: comboBox.objectValueOfSelectedItem as! String)
   }
 
 }

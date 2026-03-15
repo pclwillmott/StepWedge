@@ -98,7 +98,7 @@ public enum FilmStock : UInt16, CaseIterable {
     guard comboBox.indexOfSelectedItem != -1 else {
       return nil
     }
-    return FilmStock(rawValue: UInt16(exactly: comboBox.indexOfSelectedItem)!)
+    return FilmStock(title: comboBox.objectValueOfSelectedItem as! String)
   }
 
 }
