@@ -35,9 +35,17 @@ public enum DeveloperDilution : UInt16, CaseIterable {
   
   // MARK: Enumeration
   
-  case ddStock  = 1
-  case dd1to1   = 2
+  case ddStock  = 0
+  case dd1to1   = 1
   case dd1to3   = 3
+  case dd1to4   = 4
+  case dd1to7   = 7
+  case dd1to9   = 9
+  case dd1to14  = 14
+  case dd1to19  = 19
+  case dd1to25  = 25
+  case dd1to29  = 29
+  case dd1to50  = 50
 
   // MARK: Constructors
   
@@ -57,6 +65,16 @@ public enum DeveloperDilution : UInt16, CaseIterable {
     return DeveloperDilution.titles[self]!
   }
   
+  // MARK: Public Methods
+  
+  public func amountOfStockSolution(totalFinalVolume:Double) -> Double {
+    return totalFinalVolume / (Double(self.rawValue) + 1.0)
+  }
+  
+  public func amountOfWater(totalFinalVolume:Double) -> Double {
+    return totalFinalVolume - amountOfStockSolution(totalFinalVolume: totalFinalVolume)
+  }
+  
   // MARK: Private Class Properties
   
 #if DEBUG
@@ -71,6 +89,14 @@ public enum DeveloperDilution : UInt16, CaseIterable {
     .ddStock : String(localized: "Stock"),
     .dd1to1  : String(localized: "1:1"),
     .dd1to3  : String(localized: "1:3"),
+    .dd1to4  : String(localized: "1:4"),
+    .dd1to7  : String(localized: "1:7"),
+    .dd1to9  : String(localized: "1:9"),
+    .dd1to14 : String(localized: "1:14"),
+    .dd1to19 : String(localized: "1:19"),
+    .dd1to25 : String(localized: "1:25"),
+    .dd1to29 : String(localized: "1:29"),
+    .dd1to50 : String(localized: "1:50"),
   ]
   
   // MARK: Public Class Methods
