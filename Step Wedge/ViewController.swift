@@ -22,5 +22,11 @@ class ViewController: NSViewController {
   }
 
 
+  @IBAction func btnPrintAction(_ sender: Any) {
+    
+    graphPaperView.printToPaper(view: graphPaperView)
+  }
+  
+  @IBOutlet weak var graphPaperView: GraphPaperView!
 }
 

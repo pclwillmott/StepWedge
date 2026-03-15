@@ -1,8 +1,13 @@
-// -----------------------------------------------------------------------------
-// FilmSpeed.swift
-// Step Wedge
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>FILEHEADER</key>
+    <string> -----------------------------------------------------------------------------
+// ___FILENAME___
+// ___PROJECTNAME___
 //
-// Copyright © 2026 Paul C. L. Willmott. All rights reserved.
+// Copyright © ___YEAR___ Paul C. L. Willmott. All rights reserved.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy 
 // of this software and associated documentation files (the “Software”), to deal 
@@ -25,7 +30,7 @@
 //
 // Revision History:
 //
-//     15/03/2026  Paul Willmott - FilmSpeed.swift created
-// -----------------------------------------------------------------------------
-
-import Foundation
+//     ___DATE___  ___FULLUSERNAME___ - ___FILENAME___ created
+// -----------------------------------------------------------------------------</string>
+</dict>
+</plist>
