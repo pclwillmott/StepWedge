@@ -27,6 +27,7 @@
 		DA9F383B2F2E41F100BA02BF /* Step Wedge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Step Wedge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9F384B2F2E41F400BA02BF /* Step WedgeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Step WedgeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA9F38552F2E41F400BA02BF /* Step WedgeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Step WedgeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAE1DC902F66F8A8002F9638 /* Step Wedge.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Step Wedge.xctestplan"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +76,7 @@
 		DA9F38322F2E41F100BA02BF = {
 			isa = PBXGroup;
 			children = (
+				DAE1DC902F66F8A8002F9638 /* Step Wedge.xctestplan */,
 				DA9F383D2F2E41F100BA02BF /* Step Wedge */,
 				DA9F384E2F2E41F400BA02BF /* Step WedgeTests */,
 				DA9F38582F2E41F400BA02BF /* Step WedgeUITests */,

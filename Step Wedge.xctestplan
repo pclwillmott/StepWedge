@@ -1,0 +1,43 @@
+{
+  "configurations" : [
+    {
+      "id" : "ED11DCEF-372E-4656-BA36-2C46A1D48C27",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Step Wedge.xcodeproj",
+      "identifier" : "DA9F383A2F2E41F100BA02BF",
+      "name" : "Step Wedge"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Step Wedge.xcodeproj",
+        "identifier" : "DA9F384A2F2E41F400BA02BF",
+        "name" : "Step WedgeTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "skippedTests" : [
+        "Step_WedgeUITests\/testLaunchPerformance()",
+        "Step_WedgeUITestsLaunchTests",
+        "Step_WedgeUITestsLaunchTests\/testLaunch()"
+      ],
+      "target" : {
+        "containerPath" : "container:Step Wedge.xcodeproj",
+        "identifier" : "DA9F38542F2E41F400BA02BF",
+        "name" : "Step WedgeUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

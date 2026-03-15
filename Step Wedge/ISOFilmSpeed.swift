@@ -60,6 +60,7 @@ public enum ISOFilmSpeed : UInt16, CaseIterable {
   case iso20   = 20
   case iso16   = 16
   case iso12   = 12
+  case unknown = 0
   
   // MARK: Constructors
   
@@ -72,7 +73,7 @@ public enum ISOFilmSpeed : UInt16, CaseIterable {
     }
     return nil
   }
-
+  
   // MARK: Public Properties
   
   public var title : String {
@@ -81,32 +82,41 @@ public enum ISOFilmSpeed : UInt16, CaseIterable {
   
   // MARK: Private Class Properties
   
+#if DEBUG
+  
+  public static var titles_forTest : [ISOFilmSpeed:String] {
+    return titles
+  }
+  
+#endif // DEBUG
+  
   private static let titles : [ISOFilmSpeed:String] = [
-    .iso12 : String(localized: "ISO 12/12°"),
-    .iso16 : String(localized: "ISO 16/13°"),
-    .iso20 : String(localized: "ISO 20/14°"),
-    .iso25 : String(localized: "ISO 25/15°"),
-    .iso32 : String(localized: "ISO 32/16°"),
-    .iso40 : String(localized: "ISO 40/17°"),
-    .iso50 : String(localized: "ISO 50/18°"),
-    .iso64 : String(localized: "ISO 64/19°"),
-    .iso80 : String(localized: "ISO 80/20°"),
-    .iso100 : String(localized: "ISO 100/21°"),
-    .iso125 : String(localized: "ISO 125/22°"),
-    .iso160 : String(localized: "ISO 160/23°"),
-    .iso200 : String(localized: "ISO 200/24°"),
-    .iso250 : String(localized: "ISO 250/25°"),
-    .iso320 : String(localized: "ISO 320/26°"),
-    .iso400 : String(localized: "ISO 400/27°"),
-    .iso500 : String(localized: "ISO 500/28°"),
-    .iso640 : String(localized: "ISO 640/29°"),
-    .iso800 : String(localized: "ISO 800/30°"),
+    .iso12   : String(localized: "ISO 12/12°"),
+    .iso16   : String(localized: "ISO 16/13°"),
+    .iso20   : String(localized: "ISO 20/14°"),
+    .iso25   : String(localized: "ISO 25/15°"),
+    .iso32   : String(localized: "ISO 32/16°"),
+    .iso40   : String(localized: "ISO 40/17°"),
+    .iso50   : String(localized: "ISO 50/18°"),
+    .iso64   : String(localized: "ISO 64/19°"),
+    .iso80   : String(localized: "ISO 80/20°"),
+    .iso100  : String(localized: "ISO 100/21°"),
+    .iso125  : String(localized: "ISO 125/22°"),
+    .iso160  : String(localized: "ISO 160/23°"),
+    .iso200  : String(localized: "ISO 200/24°"),
+    .iso250  : String(localized: "ISO 250/25°"),
+    .iso320  : String(localized: "ISO 320/26°"),
+    .iso400  : String(localized: "ISO 400/27°"),
+    .iso500  : String(localized: "ISO 500/28°"),
+    .iso640  : String(localized: "ISO 640/29°"),
+    .iso800  : String(localized: "ISO 800/30°"),
     .iso1000 : String(localized: "ISO 1000/31°"),
     .iso1250 : String(localized: "ISO 1250/32°"),
     .iso1600 : String(localized: "ISO 1600/33°"),
     .iso2000 : String(localized: "ISO 2000/34°"),
     .iso2500 : String(localized: "ISO 2500/35°"),
     .iso3200 : String(localized: "ISO 3200/36°"),
+    .unknown : String(localized: "Unknown"),
   ]
   
   // MARK: Public Class Methods

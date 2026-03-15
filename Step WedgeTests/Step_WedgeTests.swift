@@ -10,8 +10,48 @@ import Testing
 
 struct Step_WedgeTests {
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+  @Test func example() async throws {
+      // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+  }
+  
+  @Test func testISOFilmSpeed() async throws {
+    
+    for isoSpeed in ISOFilmSpeed.allCases {
+      #expect(ISOFilmSpeed.titles_forTest[isoSpeed] != nil)
     }
+    
+  }
+
+  @Test func testFilmFormat() async throws {
+    
+    for filmFormat in FilmFormat.allCases {
+      #expect(FilmFormat.titles_forTest[filmFormat] != nil)
+    }
+    
+  }
+
+  @Test func testDeveloper() async throws {
+    
+    for developer in Developer.allCases {
+      #expect(Developer.titles_forTest[developer] != nil)
+    }
+    
+  }
+
+  @Test func testFilmStock() async throws {
+    
+    for filmStock in FilmStock.allCases {
+      #expect(FilmStock.titles_forTest[filmStock] != nil)
+    }
+    
+  }
+
+  @Test func testDeveloperDilution() async throws {
+    
+    for dilution in DeveloperDilution.allCases {
+      #expect(DeveloperDilution.titles_forTest[dilution] != nil)
+    }
+    
+  }
 
 }
